@@ -18,11 +18,11 @@ async function main(){
     await products.save(newProduct2)
     // Prueba deleteById()
     console.log('Prueba de eliminacion')
-    let productIdToDelete = 14
+    let productIdToDelete = 7
     await products.deleteById(productIdToDelete)
     allProducts = await products.getAll() // Actualizamos la variable allProducts para ver si se ha eliminado el elemento
     console.log(allProducts)
     // Prueba deleteAll()
-    await products.deleteAll()
+    // await products.deleteAll()
 }
 main()
