@@ -105,7 +105,7 @@ db.productos.insertMany([
     "src": "randomurl"
   },
   {
-    "name": "Nike Vapormax",
+    "name": "Nike Vapormaxx",
     "price": 1200,
     "src": "randomurl"
   },
