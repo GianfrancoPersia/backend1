@@ -82,6 +82,7 @@ class Container{
             console.error(error)
         }
     }
+    //ADS
     checkLength(arr){
         if (arr.length === 0){
             console.error('El array esta vacio')
