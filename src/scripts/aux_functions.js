@@ -24,7 +24,7 @@ export function isLoggedIn(req, res, next){
 export function isLoggedOut(req, res, next){
     req.session.nombre ? res.redirect('/home') : next()
 }
-// Funcion retorno Fecha
+// Funcion retorno Fechaa
 export function getTimestamp(){
     return (`${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()} - ${new Date().toLocaleTimeString('es-AR')}`)
 }
