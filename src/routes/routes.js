@@ -30,8 +30,7 @@ export function postLogin(req, res) {
 }
 
 export function postSignup(req, res) {
-    const user = req.user;
-    req.session.name = user.username;
+    req.session.name = req.user.username;
     res.render('home', {name : req.session.name});
 }
 
@@ -49,7 +48,7 @@ export function getFailedSignUp(req, res) {
 
 
 export function getLogOut(req, res, next) {
-    const name = req.user.username;
+    const name = req.user.username ? req.user.username : req.session.name
     req.logout((err) => {
         if (err) { return next(err); }
         req.session.destroy((error) => {
@@ -57,4 +56,16 @@ export function getLogOut(req, res, next) {
             else{res.render('logout', {nombre : name});}
         })
     });
+}
+
+export function getInfo(req, res) {
+    res.json({
+        args_de_entrada : process.argv,
+        platform_name : process.platform,
+        node_version : process.version,
+        rss : process.memoryUsage().rss,
+        execution_path : process.execPath,
+        PID : process.pid,
+        proyect_folder : process.cwd()
+    })
 }
